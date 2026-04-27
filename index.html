@@ -94,36 +94,74 @@
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered">Abstract</h2>
     <div class="content">
-      <p>
-        This project explores machine learning models to predict battery voltage over time using
-        relative time, current, and temperature as input features. Three models were implemented:
-        linear regression, random forest, and k-nearest neighbors. Model performance was evaluated
-        using R² and RMSE. The random forest model achieved the highest accuracy and lowest prediction error.
-      </p>
+     <p>
+This project applies machine learning techniques to analyze randomized battery usage data and predict battery voltage behavior over time. 
+The dataset includes approximately 7.2 million observations capturing real-world charge and discharge cycles using features such as relative time, current, and temperature.
+
+Three models were implemented: linear regression, random forest, and k-nearest neighbors (KNN). 
+Results show that the random forest model achieved the best performance with the lowest RMSE (~0.107) and highest R² (~0.87), indicating strong predictive capability. 
+In contrast, KNN showed higher error and lower accuracy, highlighting limitations on complex datasets.
+
+These findings demonstrate that nonlinear models are more effective for capturing battery behavior and improving prediction accuracy.
+     </p>
     </div>
+  </div>
+</section>
+<!-- OBERSVATIONS -->
+  <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Key Observations</h2>
+
+    <ul>
+      <li>Voltage fluctuates during charge and discharge cycles</li>
+      <li>Current shows spikes during load changes</li>
+      <li>Temperature varies with battery activity</li>
+      <li>Relationships between variables appear nonlinear</li>
+    </ul>
+
+  </div>
+</section>
+<!-- DATASET -->
+  <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Dataset</h2>
+
+    <p>
+      The dataset consists of approximately 7.2 million observations collected from randomized battery charge and discharge cycles.
+      It captures real-world battery operating conditions and includes the following key features:
+    </p>
+
+    <ul>
+      <li>Relative Time (seconds)</li>
+      <li>Voltage</li>
+      <li>Current</li>
+      <li>Temperature</li>
+    </ul>
+
+    <p>
+      The data was preprocessed in R, including flattening nested structures, converting values to numeric format,
+      and subsampling for efficient visualization and model training.
+    </p>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Results</h2>
+<p>
+The three models showed clear differences in performance:
 
-    <img src="static/images/carousel1.jpg" style="display:block; margin:auto; max-width:700px;">
-    <p class="has-text-centered">Model prediction vs actual voltage.</p>
+<ul>
+  <li><b>Linear Regression (Baseline)</b><br>
+  RMSE: 0.141 | R²: 0.78 — captured general trends but limited by linear assumptions.</li>
 
-    <br>
+  <li><b>Random Forest (Best Model)</b><br>
+  RMSE: 0.107 | R²: 0.87 — captured nonlinear relationships and produced the most accurate predictions.</li>
 
-    <img src="static/images/carousel2.jpg" style="display:block; margin:auto; max-width:700px;">
-    <p class="has-text-centered">Random forest model performance.</p>
+  <li><b>K-Nearest Neighbors (KNN)</b><br>
+  RMSE: 0.149 | R²: 0.75 — higher error and struggled with large, complex datasets.</li>
+</ul>
 
-    <br>
-
-    <img src="static/images/carousel3.jpg" style="display:block; margin:auto; max-width:700px;">
-    <p class="has-text-centered">KNN model predictions.</p>
-
-  </div>
-</section>
+Overall, the random forest model outperformed all other approaches due to its ability to model nonlinear patterns in battery behavior.
+</p>
 
 <!-- PERFORMANCE -->
 <section class="section">
