@@ -121,48 +121,67 @@ These findings demonstrate that nonlinear models are more effective for capturin
 
   </div>
 </section>
+  
 <!-- DATASET -->
   <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Dataset</h2>
+    <h2 class="title is-3 has-text-centered">Dataset</h2>
 
     <p>
-      The dataset consists of approximately 7.2 million observations collected from randomized battery charge and discharge cycles.
-      It captures real-world battery operating conditions and includes the following key features:
+      The dataset consists of approximately <b>7.2 million observations</b> collected from randomized battery 
+      charge and discharge cycles. It captures real-world battery operating conditions and includes the following features:
     </p>
 
     <ul>
-      <li>Relative Time (seconds)</li>
-      <li>Voltage</li>
-      <li>Current</li>
-      <li>Temperature</li>
+      <li><b>Relative Time</b> (seconds)</li>
+      <li><b>Voltage</b></li>
+      <li><b>Current</b></li>
+      <li><b>Temperature</b></li>
     </ul>
 
     <p>
       The data was preprocessed in R, including flattening nested structures, converting values to numeric format,
-      and subsampling for efficient visualization and model training.
+      and subsampling for efficient visualization and model training. This resulted in a clean dataset suitable for
+      machine learning analysis.
     </p>
+
   </div>
 </section>
-
+  
 <!-- RESULTS -->
-<p>
-The three models showed clear differences in performance:
+<section class="section">
+  <div class="container is-max-desktop">
 
-<ul>
-  <li><b>Linear Regression (Baseline)</b><br>
-  RMSE: 0.141 | R²: 0.78 — captured general trends but limited by linear assumptions.</li>
+    <h2 class="title is-3 has-text-centered">Results</h2>
 
-  <li><b>Random Forest (Best Model)</b><br>
-  RMSE: 0.107 | R²: 0.87 — captured nonlinear relationships and produced the most accurate predictions.</li>
+    <p>
+      The three models showed clear differences in performance:
+    </p>
 
-  <li><b>K-Nearest Neighbors (KNN)</b><br>
-  RMSE: 0.149 | R²: 0.75 — higher error and struggled with large, complex datasets.</li>
-</ul>
+    <ul>
+      <li>
+        <b>Linear Regression (Baseline)</b><br>
+        RMSE: 0.141 | R²: 0.78 — captured general trends but limited by linear assumptions.
+      </li>
 
-Overall, the random forest model outperformed all other approaches due to its ability to model nonlinear patterns in battery behavior.
-</p>
+      <li>
+        <b>Random Forest (Best Model)</b><br>
+        RMSE: 0.107 | R²: 0.87 — captured nonlinear relationships and produced the most accurate predictions.
+      </li>
 
+      <li>
+        <b>K-Nearest Neighbors (KNN)</b><br>
+        RMSE: 0.149 | R²: 0.75 — higher error and struggled with large, complex datasets.
+      </li>
+    </ul>
+
+    <p>
+      Overall, the random forest model outperformed all other approaches due to its ability to model nonlinear patterns in battery behavior.
+    </p>
+
+  </div>
+</section>
+  
 <!-- PERFORMANCE -->
 <section class="section">
   <div class="container is-max-desktop">
