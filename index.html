@@ -3,28 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Battery Voltage Prediction Using Machine Learning - Colin Fields, Tierney Lawrence">
-  <meta name="description" content="Machine learning models including linear regression, random forest, and KNN were used to predict battery voltage using time, current, and temperature features.">
-  <meta name="keywords" content="machine learning, battery prediction, random forest, KNN, linear regression, R2, RMSE">
-  <meta name="author" content="Colin Fields, Tierney Lawrence">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="University at Albany">
-  <meta property="og:title" content="Battery Voltage Prediction Using Machine Learning">
-  <meta property="og:description" content="Machine learning models were used to predict battery voltage using time, current, and temperature.">
-  <meta property="og:url" content="https://colinfields-james.github.io/Course-project-page-template/">
-  <meta property="og:image" content="static/images/social_preview.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Battery Voltage Prediction Using Machine Learning">
-  <meta name="twitter:description" content="Machine learning models for battery voltage prediction.">
-  <meta name="twitter:image" content="static/images/social_preview.png">
 
   <title>Battery Voltage Prediction Using Machine Learning | Colin Fields</title>
 
@@ -56,15 +34,8 @@
       </div>
 
       <div class="publication-links" style="margin-top:15px;">
-        <span class="link-block">
-          <a href="https://github.com/colinfields-james/Course-project-page-template"
-          class="external-link button is-normal is-rounded is-dark" target="_blank">
-            <span class="icon">
-              <i class="fab fa-github"></i>
-            </span>
-            <span>Code</span>
-          </a>
-        </span>
+        <a href="https://github.com/colinfields-james/Course-project-page-template"
+        class="button is-dark is-rounded" target="_blank">Code</a>
       </div>
 
     </div>
@@ -80,9 +51,7 @@
            style="width:100%; max-width:900px; display:block; margin:auto; border-radius:12px;">
 
       <h2 class="subtitle has-text-centered" style="margin-top:15px;">
-        Our machine learning pipeline uses input features including relative time, current, and temperature.
-        These features are used to train multiple models such as linear regression, random forest, and KNN.
-        The models are evaluated using R² and RMSE, and the best-performing model is selected to predict battery voltage.
+        Our machine learning pipeline uses time, current, and temperature to train multiple models and predict battery voltage.
       </h2>
 
     </div>
@@ -93,155 +62,134 @@
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <h2 class="title is-2 has-text-centered">Abstract</h2>
-    <div class="content">
-     <p>
-This project applies machine learning techniques to analyze randomized battery usage data and predict battery voltage behavior over time. 
-The dataset includes approximately 7.2 million observations capturing real-world charge and discharge cycles using features such as relative time, current, and temperature.
-
-Three models were implemented: linear regression, random forest, and k-nearest neighbors (KNN). 
-Results show that the random forest model achieved the best performance with the lowest RMSE (~0.107) and highest R² (~0.87), indicating strong predictive capability. 
-In contrast, KNN showed higher error and lower accuracy, highlighting limitations on complex datasets.
-
-These findings demonstrate that nonlinear models are more effective for capturing battery behavior and improving prediction accuracy.
-     </p>
-    </div>
+    <p>
+      This project applies machine learning techniques to predict battery voltage using real-world charge and discharge data.
+      The dataset includes approximately 7.2 million observations. Models evaluated include linear regression, random forest,
+      KNN, and a neural network. Random forest achieved the best performance.
+    </p>
   </div>
 </section>
-<!-- OBERSVATIONS -->
-  <section class="section">
+
+<!-- OBSERVATIONS -->
+<section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered"">Key Observations</h2>
+    <h2 class="title is-3 has-text-centered">Key Observations</h2>
+
+    <!-- IMAGE PLACEHOLDER -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="static/images/obs.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 1:</b> Time-series behavior of voltage, current, and temperature.</p>
+    </div>
 
     <ul>
-      <li>Voltage fluctuates during charge and discharge cycles</li>
-      <li>Current shows spikes during load changes</li>
-      <li>Temperature varies with battery activity</li>
-      <li>Relationships between variables appear nonlinear</li>
+      <li>Voltage fluctuates during charge cycles</li>
+      <li>Current shows spikes</li>
+      <li>Temperature varies with activity</li>
+      <li>Relationships are nonlinear</li>
     </ul>
-
   </div>
 </section>
-  
+
 <!-- DATASET -->
-  <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Dataset</h2>
 
+    <!-- IMAGE PLACEHOLDER -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="static/images/dataset.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 2:</b> Distribution of battery data.</p>
+    </div>
+
     <p>
-      The dataset consists of approximately <b>7.2 million observations</b> collected from randomized battery 
-      charge and discharge cycles. It captures real-world battery operating conditions and includes the following features:
+      The dataset consists of ~7.2 million observations from randomized battery usage cycles.
     </p>
 
     <ul>
-      <li><b>Relative Time</b> (seconds)</li>
-      <li><b>Voltage</b></li>
-      <li><b>Current</b></li>
-      <li><b>Temperature</b></li>
+      <li>Relative Time</li>
+      <li>Voltage</li>
+      <li>Current</li>
+      <li>Temperature</li>
     </ul>
-
-    <p>
-      The data was preprocessed in R, including flattening nested structures, converting values to numeric format,
-      and subsampling for efficient visualization and model training. This resulted in a clean dataset suitable for
-      machine learning analysis.
-    </p>
 
   </div>
 </section>
-  
+
 <!-- RESULTS -->
 <section class="section">
   <div class="container is-max-desktop">
-
     <h2 class="title is-3 has-text-centered">Results</h2>
 
-    <p>
-      The three models showed clear differences in performance:
-    </p>
-
-    <ul>
-      <li>
-        <b>Linear Regression (Baseline)</b><br>
-        RMSE: 0.141 | R²: 0.78 — captured general trends but limited by linear assumptions.
-      </li>
-
-      <li>
-        <b>Random Forest (Best Model)</b><br>
-        RMSE: 0.107 | R²: 0.87 — captured nonlinear relationships and produced the most accurate predictions.
-      </li>
-
-      <li>
-        <b>K-Nearest Neighbors (KNN)</b><br>
-        RMSE: 0.149 | R²: 0.75 — higher error and struggled with large, complex datasets.
-      </li>
-    </ul>
-
-    <p>
-      Overall, the random forest model outperformed all other approaches due to its ability to model nonlinear patterns in battery behavior.
-    </p>
-
-  </div>
-</section>
-
-  <!-- NEURAL NETWORK -->
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <h2 class="title is-3 has-text-centered">Neural Network Model</h2>
-
-    <!-- IMAGE -->
+    <!-- IMAGE PLACEHOLDER -->
     <div style="text-align:center; margin-bottom:20px;">
-      <img src="static/images/nn_network.png" 
-           style="max-width:700px; width:100%; border-radius:10px;">
-      <p style="font-size:14px; color:gray;">
-        <b>Figure X:</b> Neural network predicted vs actual voltage.
-      </p>
+      <img src="static/images/results.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 3:</b> Predicted vs actual voltage.</p>
     </div>
 
-    <!-- TEXT -->
     <ul>
-      <li>Implemented a feedforward neural network</li>
-      <li>Uses hidden layers to learn nonlinear relationships</li>
-      <li>Applies weighted inputs and activation functions</li>
-      <li><b>RMSE:</b> 0.110</li>
-      <li><b>R²:</b> 0.863</li>
-      <li>Performance is comparable to the random forest model</li>
+      <li><b>Linear Regression:</b> RMSE 0.141 | R² 0.78</li>
+      <li><b>Random Forest:</b> RMSE 0.107 | R² 0.87</li>
+      <li><b>KNN:</b> RMSE 0.149 | R² 0.75</li>
     </ul>
 
   </div>
 </section>
 
-  <!-- IMPROVEMENTS -->
+<!-- NEURAL NETWORK -->
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Neural Network Model</h2>
 
-    <h2 class="title is-3 has-text-centered">Improvements</h2>
+    <!-- IMAGE PLACEHOLDER -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="static/images/nn_network.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 4:</b> Neural network predictions.</p>
+    </div>
 
     <ul>
-      <li>Added K-Nearest Neighbors (KNN) for model diversity</li>
-      <li>Implemented a neural network model</li>
-      <li>Introduced proper train/test split</li>
-      <li>Added evaluation metrics (RMSE and R²)</li>
-      <li>Improved prediction accuracy (~25% reduction in error)</li>
-      <li>Compared multiple machine learning approaches</li>
+      <li>Feedforward neural network</li>
+      <li>RMSE: 0.110</li>
+      <li>R²: 0.863</li>
+      <li>Performance close to Random Forest</li>
     </ul>
 
   </div>
 </section>
-  
+
+<!-- IMPROVEMENTS -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Improvements</h2>
+
+    <!-- IMAGE PLACEHOLDER -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="static/images/improvement.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 5:</b> Improvement in model accuracy.</p>
+    </div>
+
+    <ul>
+      <li>Added KNN and Neural Network</li>
+      <li>Train/test split introduced</li>
+      <li>Evaluation metrics added</li>
+      <li>~25% error reduction</li>
+    </ul>
+
+  </div>
+</section>
+
 <!-- PERFORMANCE -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered"">Model Performance</h2>
+    <h2 class="title is-3 has-text-centered">Model Performance</h2>
 
-    <ul>
-      <li>Linear Regression: R² ≈ 0.82</li>
-      <li>Random Forest: R² ≈ 0.91</li>
-      <li>KNN Model: R² ≈ 0.88</li>
-    </ul>
+    <!-- IMAGE PLACEHOLDER -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="static/images/performance.png" style="max-width:700px; width:100%;">
+      <p style="font-size:14px; color:gray;"><b>Figure 6:</b> Model comparison using RMSE and R².</p>
+    </div>
 
     <p>
-      R² measures how well the model explains variation in the data. RMSE measures prediction error,
-      where lower values indicate better accuracy.
+      Random Forest achieved the best overall performance, followed closely by the neural network.
     </p>
 
   </div>
